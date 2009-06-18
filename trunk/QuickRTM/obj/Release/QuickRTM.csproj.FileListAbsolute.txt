@@ -1,0 +1,14 @@
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\QuickRTM.exe
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\QuickRTM.pdb
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.dll
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.Forms.dll
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.PocketOutlook.dll
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.PocketOutlook.xml
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.xml
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\bin\Release\Microsoft.WindowsMobile.Forms.xml
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\QuickRTM.Form1.resources
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\QuickRTM.Properties.Resources.resources
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\QuickRTM.csproj.GenerateResource.Cache
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\QuickRTM.exe
+C:\Documents and Settings\mwilber\My Documents\Visual Studio 2008\Projects\QuickRTM\QuickRTM\obj\Release\QuickRTM.pdb
