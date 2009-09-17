@@ -17,22 +17,92 @@ namespace QuickRTM
         public Form1()
         {
             InitializeComponent();
+            dateSelect.Items.Add("Today");
+            dateSelect.Items.Add("Tomorrow");
+
+            DateTime dt = DateTime.Now;
+
+            for (int idx = 2; idx < 7; idx++)
+            {
+                //dt = dt.AddDays(1);
+                dateSelect.Items.Add(dt.AddDays(idx).DayOfWeek.ToString());
+            }
+
+            dateSelect.SelectedIndex = 0;
+
+            statusBox.Text = "";
             msgTxt.Focus();
         }
 
         private void menuItem1_Click(object sender, EventArgs e)
         {
             // Send the SMS message
-            SmsMessage msg = new SmsMessage("40404", "d rtm today " + msgTxt.Text);
-            msg.Send();
-            msgTxt.Text = "";
+            statusBox.Text = "Sending...";
+            SmsMessage msg = new SmsMessage("40404", "d rtm "+dateSelect.SelectedItem+" " + msgTxt.Text);
+            try
+            {
+                msg.Send();
+                msgTxt.Text = "";
+                statusBox.Text = "Sent!";
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("The message could not be sent. Try again in a minute. \r\r Error: " + err.Message);
+                statusBox.Text = "Error. Try again.";
+            }
         }
 
         private void menuItem2_Click(object sender, EventArgs e)
         {
             //Application.Exit();
             SmsMessage msg = new SmsMessage("40404", "d rtm !today");
-            msg.Send();
+            statusBox.Text = "Sending...";
+            try
+            {
+                msg.Send();
+                statusBox.Text = "List request sent!";
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("The message could not be sent. Try again in a minute. \r\r Error: " + err.Message);
+                statusBox.Text = "Error. Try again.";
+            }
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (this.Width > this.Height)
+            {
+                //MessageBox.Show("landscape");
+                logo.Location = new Point(68, 3);
+                label1.Location = new Point(70, 68);
+                msgTxt.Location = new Point(34, 91);
+                msgTxt.Width = 232;
+                dateSelect.Location = new Point(34, 125);
+                dateSelect.Width = 232;
+                statusBox.Location = new Point(31, 159);
+                statusBox.Width = 230;
+                panel1.Location = new Point(33, 90);
+                panel1.Width = 234;
+                panel2.Location = new Point(33, 124);
+                panel2.Width = 234;
+            }
+            else
+            {
+                //MessageBox.Show("portrait");
+                logo.Location = new Point(38, 17);
+                label1.Location = new Point(40, 97);
+                msgTxt.Location = new Point(30, 124);
+                msgTxt.Width = 180;
+                dateSelect.Location = new Point(30, 163);
+                dateSelect.Width = 180;
+                statusBox.Location = new Point(30, 219);
+                statusBox.Width = 178;
+                panel1.Location = new Point(29, 123);
+                panel1.Width = 182;
+                panel2.Location = new Point(29, 162);
+                panel2.Width = 182;
+            }
         }
     }
 }
