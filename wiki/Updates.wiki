@@ -1,0 +1,11 @@
+#summary Release Notes.
+
+= Details =
+
+Version 0.2 (Uploaded 9/17/2009):
+  * Added status box w/ better feedback
+  * Tweaked layout, added support for screen orientation change
+  * Added combo box to choose due day
+
+Version 0.1 (Uploaded 7/18/2009):
+  * Initial commit. First stable version.
