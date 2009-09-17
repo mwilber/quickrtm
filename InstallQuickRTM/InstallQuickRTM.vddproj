@@ -608,7 +608,7 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:InstallQuickRTM"
-        "Manufacturer" = "8:Essex"
+        "Manufacturer" = "8:MW"
         "OSVersionMin" = "8:4.0"
         "OSVersionMax" = "8:6.99"
         "NoUninstall" = "11:FALSE"
