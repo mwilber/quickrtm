@@ -14,9 +14,15 @@ namespace QuickRTM
 {
     public partial class Form1 : Form
     {
+        private Timer statTimer;
+
         public Form1()
         {
             InitializeComponent();
+
+            statTimer = new Timer();
+            statTimer.Tick += new System.EventHandler(this.clearStatusBox);
+
             dateSelect.Items.Add("Today");
             dateSelect.Items.Add("Tomorrow");
 
@@ -38,18 +44,22 @@ namespace QuickRTM
         {
             // Send the SMS message
             statusBox.Text = "Sending...";
+            statusBox.Update();
             SmsMessage msg = new SmsMessage("40404", "d rtm "+dateSelect.SelectedItem+" " + msgTxt.Text);
             try
             {
                 msg.Send();
                 msgTxt.Text = "";
                 statusBox.Text = "Sent!";
+                statusBox.Update();
             }
             catch (Exception err)
             {
                 MessageBox.Show("The message could not be sent. Try again in a minute. \r\r Error: " + err.Message);
                 statusBox.Text = "Error. Try again.";
+                statusBox.Update();
             }
+            setClearTimer();
         }
 
         private void menuItem2_Click(object sender, EventArgs e)
@@ -57,16 +67,20 @@ namespace QuickRTM
             //Application.Exit();
             SmsMessage msg = new SmsMessage("40404", "d rtm !today");
             statusBox.Text = "Sending...";
+            statusBox.Update();
             try
             {
                 msg.Send();
                 statusBox.Text = "List request sent!";
+                statusBox.Update();
             }
             catch (Exception err)
             {
                 MessageBox.Show("The message could not be sent. Try again in a minute. \r\r Error: " + err.Message);
                 statusBox.Text = "Error. Try again.";
+                statusBox.Update();
             }
+            setClearTimer();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -103,6 +117,18 @@ namespace QuickRTM
                 panel2.Location = new Point(29, 162);
                 panel2.Width = 182;
             }
+        }
+
+        private void setClearTimer()
+        {
+            statTimer.Interval = 10000;
+            statTimer.Enabled = true;
+        }
+
+        private void clearStatusBox(object sender, System.EventArgs e)
+        {
+            statusBox.Text = "";
+            statTimer.Enabled = false;
         }
     }
 }
